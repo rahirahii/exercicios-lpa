@@ -36,3 +36,10 @@ Route::get('operacao2', function(Request $request){
     $resultado=$primeiroNumero-$segundoNumero-$terceiroNumero; 
     return $resultado; 
 }); 
+
+Route::get('operacao3', function(Request $request){ 
+    $primeiroNumero=$request->input('number1'); 
+    $segundoNumero=$request->input('number2'); 
+    $resultado=$primeiroNumero/$segundoNumero; 
+    return $resultado; 
+}); 
