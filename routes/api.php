@@ -61,3 +61,10 @@ Route::get('media', function(Request $request){
     $resultado=$prova1+$prova2+$prova3+$prova4+$prova5/$media; 
     return $resultado; 
 }); 
+
+Route::get('operacao5', function(Request $request){ 
+    $primeiroNumero=$request->input('number1'); 
+    $segundoNumero=$request->input('number2'); 
+    $resultado=$segundoNumero/$primeiroNumero; 
+    return $resultado; 
+}); 
