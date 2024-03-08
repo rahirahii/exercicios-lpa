@@ -90,3 +90,11 @@ Route::get('desconto', function(Request $request){
     $valorComDesconto=$precoOriginal-$valorDesconto; 
     return $valorComDesconto; 
 }); 
+
+Route::get('salario', function(Request $request){ 
+    $salarioInicial=$request->input('pay'); 
+    $aumento=$request->input('percentual'); 
+    $valorAcrescido=$salarioInicial/100*$aumento; 
+    $salarioFinal=$salarioInicial+$valorAcrescido; 
+    return $salarioInicial . " " . $aumento . " " .  $salarioFinal; 
+}); 
