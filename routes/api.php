@@ -28,3 +28,11 @@ Route::get('operacao', function(Request $request){
     $resultado=$primeiroNumero+$segundoNumero; 
     return $resultado; 
 }); 
+
+Route::get('operacao2', function(Request $request){ 
+    $primeiroNumero=$request->input('number1'); 
+    $segundoNumero=$request->input('number2'); 
+    $terceiroNumero=$request->input('number3'); 
+    $resultado=$primeiroNumero-$segundoNumero-$terceiroNumero; 
+    return $resultado; 
+}); 
