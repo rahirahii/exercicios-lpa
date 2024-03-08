@@ -75,3 +75,10 @@ Route::get('operacao6', function(Request $request){
     $resultado=$primeiroNumero*$segundoNumero; 
     return 'o dobro do ' . $segundoNumero . ' é igual ' . $resultado; 
 }); 
+
+Route::get('area', function(Request $request){ 
+    $base=$request->input('number1'); 
+    $altura=$request->input('number2'); 
+    $resultado= $base*$altura; 
+    return $resultado; 
+}); 
