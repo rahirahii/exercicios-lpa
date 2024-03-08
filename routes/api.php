@@ -104,3 +104,9 @@ Route::get('pontos', function(Request $request){
     $pontosGanhos=$valorDasCompras/10; 
     return $pontosGanhos; 
 }); 
+
+Route::get('comissao', function(Request $request){ 
+    $valorTotal=$request->input('total'); 
+    $valorComissao=$valorTotal/100*5; 
+    return $valorComissao; 
+}); 
