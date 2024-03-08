@@ -118,3 +118,10 @@ Route::get('hora', function(Request $request){
     $segundos=$minutos*60; 
     return $horas . '-' . $minutos . '-' . $segundos; 
 }); 
+
+Route::get('produto', function(Request $request){ 
+    $preco=$request->input('price'); 
+    $quantidadeComprada=$request->input('quantidade'); 
+    $precoTotal=$preco*$quantidadeComprada; 
+    return $precoTotal; 
+}); 
