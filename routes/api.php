@@ -22,11 +22,9 @@ return 'meu nome é ' . $nome . ' nasci no ano de ' . $ano . ' na cidade de ' . 
 
 }); 
 
-Route::get('operacao2', function(Request $request){ 
-     $primeiroNumero=$request->input('number1'); 
-     $segundoNumero=$request->input('number2'); 
-     $terceiroNumero=$request->input('number3'); 
-     $resultado=$primeiroNumero-$segundoNumero-$terceiroNumero; 
-     return $resultado; 
+Route::get('operacao', function(Request $request){ 
+    $primeiroNumero=$request->input('number1'); 
+    $segundoNumero=$request->input('number2'); 
+    $resultado=$primeiroNumero+$segundoNumero; 
+    return $resultado; 
 }); 
-
