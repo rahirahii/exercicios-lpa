@@ -50,3 +50,14 @@ Route::get('operacao4', function(Request $request){
     $resultado=$primeiroNumero*$segundoNumero; 
     return $resultado; 
 }); 
+
+Route::get('media', function(Request $request){ 
+    $prova1=$request->input('nota1'); 
+    $prova2=$request->input('nota2'); 
+    $prova3=$request->input('nota3'); 
+    $prova4=$request->input('nota4'); 
+    $prova5=$request->input('nota5'); 
+    $media=$request->input('media'); 
+    $resultado=$prova1+$prova2+$prova3+$prova4+$prova5/$media; 
+    return $resultado; 
+}); 
