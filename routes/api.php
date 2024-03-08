@@ -98,3 +98,9 @@ Route::get('salario', function(Request $request){
     $salarioFinal=$salarioInicial+$valorAcrescido; 
     return $salarioInicial . " " . $aumento . " " .  $salarioFinal; 
 }); 
+
+Route::get('pontos', function(Request $request){ 
+    $valorDasCompras=$request->input('valor'); 
+    $pontosGanhos=$valorDasCompras/10; 
+    return $pontosGanhos; 
+}); 
