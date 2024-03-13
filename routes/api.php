@@ -96,7 +96,7 @@ Route::get('salario', function(Request $request){
     $aumento=$request->input('percentual'); 
     $valorAcrescido=$salarioInicial/100*$aumento; 
     $salarioFinal=$salarioInicial+$valorAcrescido; 
-    return $salarioInicial . " " . $aumento . " " .  $salarioFinal; 
+    return $salarioInicial . "-" . $aumento . "-" .  $salarioFinal; 
 }); 
 
 Route::get('pontos', function(Request $request){ 
