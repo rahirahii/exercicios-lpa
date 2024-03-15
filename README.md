@@ -20,7 +20,7 @@ Certifique-se de ter os seguintes requisitos atendidos antes e começar a trabal
 ```
 2. Acesse o diretório do projeto:
 ```
-cd exercícios-lpa
+cd exercicios-lpa
 ```
 3. Iniciando o projeto 
 ```
