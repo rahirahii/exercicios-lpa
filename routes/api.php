@@ -214,3 +214,147 @@ Route::get('numero/informado', function (Request $request){
         return $numero . ' nao divisivel por 3';
     }
 });
+
+
+Route::get('lista/exercicio/1', function(Request $request){
+    $numero=$request->input('numero');
+    if ($numero>10){
+        return 'maior que 10';
+    }elseif($numero==10){
+        return 'igual a 10';
+    }else{
+        return 'menor que 10';
+    }
+});
+
+Route::get('liste/exercicio/2', function(Request $request){
+    $numero=$request->input('numero');
+    if($numero>0){
+        return 'positivo';
+    }elseif($numero==0){
+        return 'zero';
+    }else{
+        return 'negativo';
+    }
+});
+
+Route::get('lista/exercicio/3',function(Request $request){
+    $idade=$request->input('idade');
+    if($idade>=18){
+        return 'maior de idade';
+    }else{
+        return 'menor de idade';
+    }
+});
+
+Route::get('lista/exercicio/4',function(Request $request){
+    $numero=$request->input('numero');
+    if($numero %2 ==0){
+        return 'par';
+    }else{
+        return 'impar';
+    }
+});
+
+Route::get('lista/exercicio/5',function(Request $request){
+    $numero1=$request->input('numero1');
+    $numero2=$request->input('numero2');
+    if ($numero1>$numero2){
+        return 'numero 1 e maior';
+    }else{
+        return 'numero 2 e maior';
+    }
+});
+
+Route::get('lista/exercicio/6',function(Request $request){
+    $numero=$request->input('numero');
+    if ($numero %9 ==0){
+        return 'divisivel por 9';
+    }else{
+        return 'nao divisivel por 9';
+    }
+});
+
+Route::get('lista/exercicio/7',function(Request $request){
+    $temperatura=$request->input('temperatura');
+    if ($temperatura>30){
+        return 'esta quente';
+    }else{
+        return 'nao esta quente';
+    }
+});
+
+Route::get('lista/exercicio/8',function(Request $request){
+    $numero=$request->input('numero');
+    if ($numero %7 ==0 ){
+        return 'e multiplo de 7';
+    }else{
+        return 'nao e multiplo de 7';
+    }
+});
+
+Route::get('lista/exercicio/9',function(Request $request){
+    $idade=$request->input('idade');
+    if ($idade>12){
+        return 'voce nao e uma crianca';
+    }else{
+        return 'voce e uma crianca';
+    }
+});
+
+Route::get('lista/exercicio/10', function(Request $request){
+    $numero=$request->input('numero');
+    if ($numero>0){
+        if($numero %2 !=0){
+            return 'o numero e positivo e impar';
+        }
+    }
+});
+  
+
+
+Route::get('lista/exercicio/11', function(Request $request){
+    $numero=$request->input('numero');
+    if ($numero>100){
+        return 'o numero e maior que 100';
+    }elseif($numero<100){
+        return 'o numero e menor que 100';
+    }else{
+        return 'o numero e igual a 100';
+    }
+});
+
+
+Route::get('lista/exercicio/12',function(Request $request){
+    $numero=$request->input('numero');
+    if ($numero %6 ==0){
+        return 'divisivel por 6';
+    }else{
+        return 'nao divisivel por 6';
+    }
+});
+
+Route::get('lista/exercicio/13',function(Request $request){
+    $nome=$request->input('nome');
+    if($nome=='alice'){
+        return 'ola alice';
+    }else{
+        return '';
+    }
+});
+
+Route::get('lista/exercicio/14',function (Request $request){
+    $idade=$request->input('idade');
+    $carteira=$request->input('carteira');
+    if($idade>=18){
+        if($carteira=='sim'){
+            return 'pode dirigir';
+        }else{
+            return 'nao pode dirigir';
+        }
+    }
+});
+
+
+
+
