@@ -355,6 +355,60 @@ Route::get('lista/exercicio/14',function (Request $request){
     }
 });
 
+Route::get('lista/exercicio/15',function(Request $request){
+    $numero1=$request->input('numero1');
+    $numero2=$request->input('numero2');
+    if($numero1 < $numero2){
+        return 'menor';
+    }else{
+        return '';
+    }
+});
+
+Route::get('lista/exercicio/16',function(Request $request){
+    $nome=$request->input('nome');
+    $idade=$request->input('idade');
+    if ($idade>=18){
+        return 'voce e maior de idade, rahi';
+    }else{
+        return 'voce e menor de idade, rahi';
+    }
+});
+
+Route::get('lista/exercicio/17',function(Request $request){
+    $numero1=$request->input('numero1');
+    $numero2=$request->input('numero2');
+    if($numero1==0){
+        return 'nao e possivel efetuar a divisao pois o primeiro numero e zero ';
+    }elseif($numero2 ==0){
+        return 'nao e possivel efetuar a divisao pois o segundo numero é zero';
+    }else{
+        return $numero1/$numero2;
+    }
+});
+
+Route::get('lista/exercicio/18',function(Request $request){
+    $numero1=$request->input('numero1');
+    $numero2=$request->input('numero2');
+    $resultado=$numero1*$numero2;
+    if ($resultado>100){
+        return 'e maior que 100';
+    }else{
+        return 'e menor que 100';
+    }
+});
+
+Route::get('lista/exercicio/19', function(Request $request){
+    $numero1=$request->input('numero1');
+    $numero2=$request->input('numero2');
+    $soma=$numero1+$numero2;
+    if($soma %2 ==0){
+        return $numero1*$numero2;
+    }else{
+        return $numero1/$numero2;
+    }
+
+});
 
 
 
