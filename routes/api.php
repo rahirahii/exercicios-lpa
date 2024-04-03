@@ -410,5 +410,52 @@ Route::get('lista/exercicio/19', function(Request $request){
 
 });
 
+Route::get('atividade/1',function(Request $request){
+    $nota1=$request->input('nota1');
+    $nota2=$request->input('nota2');
+    $nota3=$request->input('nota3');
+    $media=$nota1+$nota2+$nota3/3;
+    if($media>7){
+        return 'aprovado';
+    }else{
+        return 'reprovado';
+    }
+});
 
+Route::get('atividade/2',function(Request $request){
+    $renda=$request->input('renda');
+    if ($renda<=1900){
+        return 'isento de imposto';
+    }
+    if ($renda>=1901){
+        if ($renda<=2800)
+        return 'paga 7% de imposto,' . 'paga' . 7/100*7 . 'de imposto';
+    }
+    if($renda>=2801){
+        if($renda<3700)
+        return 'paga 15% de imposto, ' . 'paga' . 15/100*15 . 'de imposto';
+    }
+    if ($renda>=3700){
+        return 'paga 22% de imposto, ' . 'paga' . 22/100*22 . 'de imposto';
+    }
+});
+
+Route::get('atividade/3',function(Request $request){
+    $ano=$request->input('ano');
+    if($ano %4 ==0){
+        return 'bissexto';
+    }else{
+        return 'nao bissexto';
+    }
+});
+
+Route::get('atividade/4',function(Request $request){
+    $valorPago=$request->input('valor');
+   if($valorPago>=1000){
+    return 'ganha 15% de desconto, '. 'o desconto e ' . 15/100*$valorPago . ' reais';
+   }else{
+    return 'nao ganha desconto';
+   }
+    
+});
 
