@@ -464,7 +464,7 @@ Route::get('atividade/5',function(Request $request){
     $peso=$request->input('peso');
     $altura=$request->input('altura');
     $calculo=$altura*$altura/$peso;
-    if($calculo<18.5){
+    if($calculo<=18.5){
         return 'abaixo do peso';
     }
     if($calculo>=18.5){
@@ -475,7 +475,7 @@ Route::get('atividade/5',function(Request $request){
         if ($calculo<29.9)
         return 'sobrepeso';
     }
-    if($calculo>=30){
+    if($calculo<=30){
         if ($calculo<34.9)
         return 'obesidade nível 1';
     }
