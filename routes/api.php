@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use function PHPUnit\Framework\returnSelf;
+
 Route::get('receber/nome', function(Request $request){ 
    $nome=$request->input('name'); 
 return $nome; 
@@ -429,14 +431,14 @@ Route::get('atividade/2',function(Request $request){
     }
     if ($renda>=1901){
         if ($renda<=2800)
-        return 'paga 7% de imposto,' . 'paga' . 7/100*7 . 'de imposto';
+        return 'paga 7% de imposto, ' . 'paga ' . $renda*7/100 . ' de imposto';
     }
     if($renda>=2801){
         if($renda<3700)
-        return 'paga 15% de imposto, ' . 'paga' . 15/100*15 . 'de imposto';
+        return 'paga 15% de imposto, ' . 'paga ' . $renda*15/100 . ' de imposto';
     }
     if ($renda>=3700){
-        return 'paga 22% de imposto, ' . 'paga' . 22/100*22 . 'de imposto';
+        return 'paga 22% de imposto, ' . 'paga ' . $renda*22/100 . ' de imposto';
     }
 });
 
@@ -456,6 +458,35 @@ Route::get('atividade/4',function(Request $request){
    }else{
     return 'nao ganha desconto';
    }
-    
+});
+
+Route::get('atividade/5',function(Request $request){
+    $peso=$request->input('peso');
+    $altura=$request->input('altura');
+    $calculo=$altura*$altura/$peso;
+    if($calculo<18.5){
+        return 'abaixo do peso';
+    }
+    if($calculo>=18.5){
+        if($calculo<=24.9)
+        return 'peso normal';
+    }
+    if($calculo>=25){
+        if ($calculo<29.9)
+        return 'sobrepeso';
+    }
+    if($calculo>=30){
+        if ($calculo<34.9)
+        return 'obesidade nível 1';
+    }
+    if($calculo>=35){
+        if($calculo<39.9)
+        return 'obesidade nível 2';
+    }
+    if($calculo>=40){
+        return 'obesidade nível 3';
+    }else{
+        return '';
+    }
 });
 
