@@ -463,7 +463,7 @@ Route::get('atividade/4',function(Request $request){
 Route::get('atividade/5',function(Request $request){
     $peso=$request->input('peso');
     $altura=$request->input('altura');
-    $calculo=$altura*$altura/$peso;
+    $calculo=($altura*$altura)/$peso;
     if($calculo<=18.5){
         return 'abaixo do peso';
     }
